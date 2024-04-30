@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  pip-compile pyproject.toml \
+    --generate-hashes \
+    -o requirements.txt
+elif [ $1 = "test" ]; then
+  pip-compile pyproject.toml \
+    --extra "test" \
+    --generate-hashes \
+    -o requirements.test.txt
+elif [ $1 = "--help" ] || [ $1 = "-h" ]; then
+  echo "usage:"
+  echo ""
+  echo "> ./scripts/deps/compile [group]"
+else
+  echo "error: invalid dependency group '${1}'"
+  exit 1
+fi
