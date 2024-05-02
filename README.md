@@ -12,8 +12,6 @@
 > pip install quartutils
 ```
 
-2. TODO...
-
 ## Development
 
 This repository manages the dev environment as a Nix flake and requires [Nix to be installed](https://github.com/DeterminateSystems/nix-installer)
